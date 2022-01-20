@@ -19,9 +19,9 @@
     	</delete>
     	
     	<select id="list" resultType="com.icia.dabyinsa.user.dto.CartDto">
-    		select c.cart_id,c.prod_id,c.m_id,m.m_name,p.prod_name,c.amount,p.price,pi.img_no_seq,pi.oriname,(price*c.amount) as money
-    		from member m, cart c, prod_info p, prod_img pi
-    		where m.m_id=c.m_id and c.prod_id=p.prod_id and c.img_no_seq=pi.img_no_seq
+    		select c.cart_id,c.prod_id,c.m_id,m.m_name,p.prod_name,c.amount,p.price,(price*c.amount) as money
+    		from member m, cart c, prod_info p
+    		where m.m_id=c.m_id and c.prod_id=p.prod_id
     		order by c.cart_id
     	</select>
     	
@@ -40,8 +40,8 @@
     	</select>
     	
     	<insert id="cainsert">
-    		insert into cart (cart_id,m_id,prod_id,amount,img_no_seq)
-    		values (cart_seq.nextval, #{m_id}, #{prod_id}, 1, #{img_no_seq))
+    		insert into cart (cart_id,m_id,prod_id,amount)
+    		values (cart_seq.nextval, #{m_id}, #{prod_id}, 1,)
     	</insert>
     	
     	<select id="getItem" resultType="com.icia.dabyinsa.user.dto.CartDto">

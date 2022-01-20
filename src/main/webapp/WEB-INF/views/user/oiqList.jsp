@@ -25,6 +25,7 @@
     <title>답인사</title>
 </head>
 <body>
+<div class="aaa">
 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/myPage">마이페이지</a></li>
@@ -62,17 +63,13 @@
 </div>
 </div>
 		<table class="table table-striped">
-			<tr>
-				<th>상품명</th>
+			<tr style="border:5px outset pink;">
 				<th>주문번호</th>
 				<th>주문일자</th>
 				<th>주문상태</th>
-				<th>&nbsp;</th>
 			</tr>
 			<c:forEach var="row" items="${omap.oiqList}">
 			<tr>
-				<td>
-				${row.prod_name}</td>
 				<td>${row.o_code}</td>
 				<td>${row.o_date}</td>
 				<td>${row.d_status}</td>
@@ -80,12 +77,12 @@
 			</c:forEach>
 			
 			</table>
-			<a href="/" class="btn btn-secondary" type="button" id="goshopping">메인으로</a>
+			<a href="/" class="btn btn-secondary" type="button" id="btnList">메인으로</a>
 			
 		</form>
 	</c:otherwise>
 	</c:choose>
-	
+	</div>
     <script>
   $(function(){
     $('.datepicker1, .datepicker2').datepicker({

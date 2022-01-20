@@ -43,7 +43,6 @@ public class MainController {
       List<ProductListDto> MBPList = mserv.getMainBPList();
       int MBPcount = mserv.getMainBPcnt(prod_id);
       List<BoardEventDto> MBEList = mserv.getMainBEList();
-      MemberDto member = ms.login(p.getName());
       
       System.out.println("MNPList : "+MNPList);
       System.out.println("MBPList : "+MBPList);
@@ -53,7 +52,6 @@ public class MainController {
       mmap.put("MBPList",MBPList);
       mmap.put("MBPcount",MBPcount);
       mmap.put("MBEList",MBEList);
-      mmap.put("member", member);
       
       
       model.addAttribute("mmap", mmap);

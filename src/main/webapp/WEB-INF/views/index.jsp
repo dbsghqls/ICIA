@@ -27,16 +27,19 @@
 
 <body class="app" data-target="#main-navbar" data-spy="scroll">
 
-	<!----------------- header ----------------->
-	<header>
-		<jsp:include page="user/main_header.jsp"></jsp:include>
-	</header>
-	
+   <!----------------- header ----------------->
+   <header>
+      <jsp:include page="user/main_header.jsp"></jsp:include>
+   </header>
+   
 
-	<!-- 기타 -->
-	<a href="#" id="nino-scrollToTop">Go to Top</a>
-	
-	<!-- 상품 배너 - NEW ITEMS -->
+   <!-- 기타 -->
+   <a href="#" id="nino-scrollToTop">Go to Top</a>
+   
+   
+   
+   
+   <!-- 상품 배너 - NEW ITEMS -->
     <section id="new-items">
         <div class="container">
             <h2 class="sectiontitle">NEW ITEMS</h2>
@@ -46,13 +49,14 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="item">
                                 <a class="overlay" href="user/product/${MNPList.prod_id}">
-                                    	<span class="content">
-                                        	<i class="mdi mdi-alert-box"></i>
-                                        	<h2>${MNPList.prod_name}</h2>
-                                        	<h4>${MNPList.retail_price}</h4>
-                                    	    <p>${MNPList.prod_summary_ex}</p>
-                                	    </span>
-									<p>${MNPList.oriname}</p>
+                                       <span class="content">
+                                           <i class="mdi mdi-alert-box"></i>
+                                           <h2>${MNPList.prod_name}</h2>
+                                           <h4>${MNPList.retail_price}</h4>
+                                           <p>${MNPList.prod_summary_ex}</p>
+                                       </span>
+                                     	<img alt="상품이미지" class="image product-up-on-scroll"
+                     src="../../pImg/${MBPList.sysname}" />
                                 </a>
                             </div>
                         </div>
@@ -70,14 +74,14 @@
 
             <div class="sectionContent">
                 <div class="row">
-					<c:forEach var="MBPList" items="${mmap.MBPList}" begin="0" end="8">                   
+               <c:forEach var="MBPList" items="${mmap.MBPList}" begin="0" end="8">                   
                         <div class="col-md-4 col-sm-4">
                             <article>
                                 <div class="articleThumb">
-                                    <a href="user/product/${MBPList.prod_id}">
-                                        <!-- <img src="user/images/01.main/${MBPList.oriname}" alt=""> -->
-                                        <img src="product/${MBPList.sysname}" alt="">
-                                    </a>
+                                   <a href="product/${MBPList.prod_id}">
+						<img alt="상품이미지" class="image product-up-on-scroll" src="../../pImg/${MBPList.sysname}" />
+						</a>
+						
                                 </div>
                                 <div class="articleThumbs">
                                     <a href="user/product/${MBPList.prod_id}">
@@ -98,18 +102,8 @@
         </div>
     </section>
                 
-                
-					
-					
-					
-					
-					
-					
-					
-					
-					
-		<!-- 이벤트-->
-	  <section id="nino-portfolio">
+      <!-- 이벤트-->
+     <section id="nino-portfolio">
         <div class="container">
             <h2 class="sectiontitle">STORY</h2>
         </div>
@@ -129,90 +123,101 @@
                         </a>
                     </li>
                 </c:forEach>
-                <c:forEach var="MBEList" items="${MBEList}" begin="1" end="1">
+                
                     <li class="item">
                         <a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="#">
                             <img src="user/images/01.main/story02.jpg" alt="" />
+                            
                             <div class="overlay">
                                 <div class="content">
                                     <i class="mdi mdi-cube-outline nino-icon"></i>
+                                    <c:forEach var="MBEList" items="${MBEList}" begin="1" end="1">
                                     <h4 class="title">${MBEList.b_title}</h4>
                                     <span class="desc">${MBEList.b_content}</span>
+                                    </c:forEach>
                                 </div>
                             </div>
+                            
                         </a>
                     </li>
-                </c:forEach>
-                <c:forEach var="MBEList" items="${MBEList}" begin="2" end="2">
+                
                     <li class="item">
                         <a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="#">
                             <img src="user/images/01.main/story03.jpg" alt="" />
                             <div class="overlay">
                                 <div class="content">
                                     <i class="mdi mdi-desktop-mac nino-icon"></i>
+                                    <c:forEach var="MBEList" items="${MBEList}" begin="2" end="2">
                                     <h4 class="title">${MBEList.b_title}</h4>
                                     <span class="desc">${MBEList.b_content}</span>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </a>
                     </li>
-                </c:forEach>
-                <c:forEach var="MBEList" items="${MBEList}" begin="3" end="3">
+                
+                
                     <li class="item">
                         <a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="#">
                             <img src="user/images/01.main/story04.jpg" alt="" />
                             <div class="overlay">
                                 <div class="content">
                                     <i class="mdi mdi-flower nino-icon"></i>
+                                    <c:forEach var="MBEList" items="${MBEList}" begin="3" end="3">
                                     <h4 class="title">${MBEList.b_title}</h4>
                                     <span class="desc">${MBEList.b_content}</span>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </a>
                     </li>
-                </c:forEach>
-                <c:forEach var="MBEList" items="${MBEList}" begin="4" end="4">
+                
+                
                     <li class="item">
                         <a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="#">
                             <img src="user/images/01.main/story05.jpg" alt="" />
                             <div class="overlay">
                                 <div class="content">
                                     <i class="mdi mdi-gamepad-variant nino-icon"></i>
+                                    <c:forEach var="MBEList" items="${MBEList}" begin="4" end="4">
                                     <h4 class="title">${MBEList.b_title}</h4>
                                     <span class="desc">${MBEList.b_content}</span>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </a>
                     </li>
-                </c:forEach>
-                <c:forEach var="MBEList" items="${MBEList}" begin="5" end="5">
+                
                     <li class="item">
                         <a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="#">
                             <img src="user/images/01.main/story06.jpg" alt="" />
                             <div class="overlay">
                                 <div class="content">
                                     <i class="mdi mdi-gnome nino-icon"></i>
+                                    <c:forEach var="MBEList" items="${MBEList}" begin="5" end="5">
                                     <h4 class="title">${MBEList.b_title}</h4>
                                     <span class="desc">${MBEList.b_content}</span>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </a>
                     </li>
-                </c:forEach>
-                <c:forEach var="MBEList" items="${MBEList}" begin="6" end="6">
+                
+                
                     <li class="item">
                         <a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="#">
                             <img src="user/images/01.main/story01.jpg" alt="" />
                             <div class="overlay">
                                 <div class="content">
                                     <i class="mdi mdi-guitar-electric nino-icon"></i>
+                                    <c:forEach var="MBEList" items="${MBEList}" begin="6" end="6">
                                     <h4 class="title">${MBEList.b_title}</h4>
                                     <span class="desc">${MBEList.b_content}</span>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </a>
                     </li>
-                </c:forEach>
             </ul>
         </div>
     </section>

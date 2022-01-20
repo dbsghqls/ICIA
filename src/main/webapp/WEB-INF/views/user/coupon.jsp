@@ -21,13 +21,13 @@
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
+<div class="aaa">
 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/myPage">마이페이지</a></li>
     <li class="breadcrumb-item active" aria-current="page">쿠폰</li>
   </ol>
 </nav>
-<div id="cpAll">
 <h2>쿠폰등록</h2>
 <form id="cp_midle" action="/user/coupon/cpInsert" method="post" action="/user/coupon/cpInsert">
     <div id="couponlush">
@@ -49,7 +49,7 @@
 	<c:otherwise>
 		<form id= "cpform" name="form1" style="text-align: center;" method="post">
 		<table class="table table-hover">
-			<tr>
+			<tr style="border:5px outset pink;">
 				<th>쿠폰명</th>
 				<th>쿠폰내용</th>
 				<th>할인</th>
@@ -65,14 +65,11 @@
 			</c:forEach>
 			
 			</table>
-			<a href="/user/product_list" class="btn btn-secondary" type="button" id="goshopping">쇼핑하기</a>
+			<a href="/user/product_list" class="btn btn-secondary" type="button" id="btnList">쇼핑하기</a>
 		</form>
 	</c:otherwise>
 	</c:choose>
-	<div id="underbtn">
-	
 	</div>
-</div>
 <script type="text/javascript">
 $(function(){
 	$("#cpin").click(function(){

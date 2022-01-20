@@ -69,6 +69,7 @@
 						<img alt="상품이미지" class="image product-up-on-scroll"
                      src="../pImg/${pList.sysname}" />
 						</a>
+						
 							<div class="product-card-body">
 								<button class="title-btn">
 								<a href="product/${pList.prod_id}" class="card-title">${pList.prod_name}</a>
@@ -90,7 +91,7 @@
 							 </button>
 							 
 							 <button class="product-btn2">
-							 <a href="wish/wishList"><i class="mdi mdi-heart-outline"></i> </a>
+							 <a href="/user/wish/wishInsert?prod_id=${pList.prod_id}"><i class="mdi mdi-heart-outline"></i> </a>
 							 </button>
 						</div>
 					</div>

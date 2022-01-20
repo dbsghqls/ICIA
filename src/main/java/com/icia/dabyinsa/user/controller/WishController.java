@@ -25,10 +25,10 @@ public class WishController {
 	
 	@Secured({"ROLE_USER", "ROLE_ADMIN"})
 	@RequestMapping("wishInsert")
-	public String wishInsert(WishDto dto, HttpSession session) {
-		String m_id=(String)session.getAttribute("m_id");
-		if(m_id==null) {
-			return "redirect:/user/login";
+	public String wishInsert(WishDto dto, Principal p) {
+		String m_id= p.getName();
+		if(m_id==null) { 
+			return "redirect:/loginForm";
 		}
 		dto.setM_id(m_id);
 		wishDao.wishInsert(dto);

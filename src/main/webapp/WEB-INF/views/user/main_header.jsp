@@ -312,10 +312,11 @@
 						<!-- 장바구니 마이페이지-->
 						<ul class="nino-iconsGroup nav navbar-nav">
 							<!-- 사이드 메뉴 버튼 -->
+	
 								<button id="sbtn" class="sbtn" style="color: white;" >
-                     <a href="../myPage"><i class="mdi mdi-account"></i></a></button>
+                     <a href="user/wish/wishList"><i class="mdi mdi-heart-outline"></i></a></button>
 							<button id="sbtn" class="sbtn" style="color: white;" ><a href="user/cart/list"><i class="mdi mdi-cart-outline nino-icon"></i></a></button>
-							<button id="sbtn" class="sbtn" style="color: white;" ><a href="user/wish/wishList"><i class="mdi mdi-account"></i></a></button>
+							<button id="sbtn" class="sbtn" style="color: white;" ><a href="../myPage"><i class="mdi mdi-account"></i></a></button>
 								<button id="sbtn" class="sbtn">
 								<i class="mdi mdi-menu"></i>
 							</button>

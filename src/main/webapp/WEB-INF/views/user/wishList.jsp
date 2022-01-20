@@ -42,6 +42,7 @@ $(".btn-wishlist").click(function() {
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div class="aaa">
 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/myPage">마이페이지</a></li>
@@ -51,15 +52,15 @@ $(".btn-wishlist").click(function() {
 <h2>관심상품</h2>
 <c:choose>
 	<c:when test="${wmap.wishCount == 0}">
-		<div id="nod">관심상품을 등록해주세요.<br>
+		<div id="nod">관심상품을 등록해주세요.<br><br>
 		<a href="/user/product_list" class="btn btn-secondary"
-					type="button" id="btnList">쇼핑하기</a>
+					type="button" id="btnList">쇼핑 하러가기</a>
 		</div>
 	</c:when>
 	<c:otherwise>
-		<form id="form1" name="form1" action="/user/cart/cinsert" style="text-align: center;" method="post">
+		<form id="formw" name="form1" action="/user/cart/cinsert" style="text-align: center;" method="post">
 		<table class="table caption-top">
-			<tr>
+			<tr style="border:5px outset pink;">
 			<th>선택</th>
 				<th>상품명</th>
 				<th>금액</th>
@@ -71,27 +72,25 @@ $(".btn-wishlist").click(function() {
 			<input type="checkbox" id="cinsert" name="chk" value="${row.prod_id}"></td>
 			
 				<td>
-				<a href="product/${row.prod_id}">
-						<img alt="상품이미지" class="image product-up-on-scroll"
-							src="images/01.main/${row.oriname}" /></a>
+				<a href="product/${row.prod_id}"></a>
 				${row.prod_name}</td>
 				<td>${row.price}</td>
 				<td>
 					<input type="hidden" name="cw_id" value="${row.w_id}">
 				</td>
-				<td><a href="/user/wish/wishDelete?w_id=${row.w_id}" class="btn btn-outline-info">삭제</a></td>
+				<td><a href="/user/wish/wishDelete?w_id=${row.w_id}" class="widel">삭제</a></td>
 			</tr>
 			</c:forEach>
 			
 			</table>
-			<input id="cinsert" type="submit" class="btn btn-secondary" value="${row.prod_id}">장바구니 담기</button>
+			<input id="cinsert" type="submit" class="btn btn-secondary" value="${row.prod_id}장바구니 담기">
+			<button class="btn btn-secondary" type="button" id="wbtnDelete">관심상품 비우기</button><br><br>
 			<a href="/user/product_list" class="btn btn-secondary"
-					type="button" id="btnList">쇼핑하기</a>
-			<button class="btn btn-secondary" type="button" id="wbtnDelete">관심상품 비우기</button>
+					type="button" id="btnList">쇼핑 계속하기</a>
 		</form>
 	</c:otherwise>
 	</c:choose>
-
+</div>
     <footer>
 		<jsp:include page="footer.jsp"></jsp:include>
 	</footer>

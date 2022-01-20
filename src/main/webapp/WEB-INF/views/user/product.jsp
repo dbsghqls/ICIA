@@ -48,10 +48,19 @@
 				<div id="product-slider">
 					<div class="slider-inner">
 						<ul class="slides">
-							<li><img src="../images/01.main/${pList.oriname}" alt=""></li>
-							<li><img src="../images/01.main/${pList.oriname}" alt=""></li>
-							<li><img src="../images/01.main/${pList.oriname}" alt=""></li>
-							<li><img src="../images/01.main/${pList.oriname}" alt=""></li>
+							<li>
+						<img alt="상품이미지" class="image product-up-on-scroll"
+                     src="../../pImg/${pList.sysname}" /></li>
+                     			<li>
+						<img alt="상품이미지" class="image product-up-on-scroll"
+                     src="../../pImg/${pList.sysname}" /></li>
+                     			<li>
+						<img alt="상품이미지" class="image product-up-on-scroll"
+                     src="../../pImg/${pList.sysname}" /></li>
+                     			<li>
+						<img alt="상품이미지" class="image product-up-on-scroll"
+                     src="../../pImg/${pList.sysname}" /></li>
+							
 						</ul>
 					</div>
 					<p class="slide-btn">
@@ -146,7 +155,7 @@
 								
 							<button type="submit" class="btn" id="buynow">BUY NOW</button>
 							<button type="button" class="btn" id="cart"><a href="../cart/cainsert?prod_id=${pList.prod_id}">CART</a></button>
-							<button type="button" class="btn" id="wishInsert"><a href="../wish/wishInsert?prod_id=${pList.prod_id}">WISH LIST</a></button>
+							<button type="submit" class="btn" id="wishInsert"><a href="../wish/wishInsert?prod_id=${pList.prod_id}">WISH LIST</a></button>
 	
 		
 							 

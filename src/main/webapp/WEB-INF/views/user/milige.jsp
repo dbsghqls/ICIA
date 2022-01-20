@@ -20,6 +20,8 @@
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
+<div class="aaa">
+<div class="miaaa">
 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/myPage">마이페이지</a></li>
@@ -40,7 +42,7 @@
 	<c:otherwise>
 		<form id= "miform" name="form1" style="text-align: center;" method="post">
 		<table class="table table-hover">
-			<tr>
+			<tr style="border:5px outset pink;">
 				<th>고객명</th>
 				<th>보유 마일리지</th>
 			</tr>
@@ -52,13 +54,12 @@
 			</c:forEach>
 			
 			</table>
-			<a href="/user/product_list" class="btn btn-secondary" type="button" id="goshopping">쇼핑하기</a>
+			<a href="/user/product_list" class="btn btn-secondary" type="button" id="btnList">쇼핑하기</a>
 		</form>
 	</c:otherwise>
 	</c:choose>
-	<div id="underbtn">
-	
 	</div>
+</div>
 </div>
 
     <footer>

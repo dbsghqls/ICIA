@@ -198,7 +198,7 @@ public class MemberService {
 			
 		} catch (Exception e) {
 			
-			view = "redirect:index";
+			view = "redirect:myPage";
 			msg = "탈퇴 실패";
 
 		}

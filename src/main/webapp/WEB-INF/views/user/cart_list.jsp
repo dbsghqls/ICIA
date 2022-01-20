@@ -39,10 +39,16 @@ $(function(){
     return true; 
   } 
 </script>
+<script> 
+  function submit3(frm) { 
+    frm.action='user/order/'; 
+    frm.submit(); 
+    return true; 
+  } 
+</script>
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
-
 <div class="aaa">
 <nav style="-bs-breadcrumb-divider: url(&amp; #34; data: image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&amp;#34;);"
 		aria-label="breadcrumb">
@@ -51,17 +57,19 @@ $(function(){
 			<li class="breadcrumb-item active" aria-current="page">장바구니</li>
 		</ol>
 </nav>
+
+<h3>장바구니</h3>
 	<c:choose>
 		<c:when test="${map.count == 0}">
-		<div id="nod">장바구니가 비었습니다.<br>
+		<div id="nod">장바구니가 비어있네요.<br><br>
 		<a href="/user/product_list" class="btn btn-secondary"
-					type="button" id="btnList">쇼핑 계속하기</a></div>
+					type="button" id="btnList">쇼핑 하러가기</a></div>
 	</c:when>
 		<c:otherwise>
 			<form id="form5" name="form1" style="text-align: center;"
-				method="post" action="/user/order/">
+				method="post" action="../order/${pList.prod_id}">
 				<table class="table table-sm">
-					<tr>
+					<tr style="border:5px outset pink;">
 						<th>선택</th>
 						<th>상품명</th>
 						<th>금액</th>
@@ -73,9 +81,7 @@ $(function(){
 						<tr>
 							<td><input type="checkbox" name="chkod"
 								value="${row.prod_id}"></td>
-							<td><a href="../product/${row.prod_id}">
-						<img alt="상품이미지" class="jhimg"
-							src="../images/01.main/${row.oriname}" /></a>   ${row.prod_name}</td>
+							<td><a href="../product/${row.prod_id}"></a>   ${row.prod_name}</td>
 							<td>${row.price}</td>
 							<td><input type="number" style="width: 40px;" min="0"
 								max="100" name="amount" value="${row.amount}">
@@ -83,11 +89,11 @@ $(function(){
 								<input type="hidden" name="cart_id" value="${row.cart_id}"></td>
 							<td>${row.money}</td>
 							<td><a href="/user/cart/delete?cart_id=${row.cart_id}"
-								class="btn btn-outline-info">삭제</a></td>
+								class="widel">삭제</a></td>
 						</tr>
 					</c:forEach>
 
-					<tr>
+					<tr style="border:5px dotted pink;">
 						<td colspan="5" align="center">장바구니 금액 합계 <fmt:formatNumber
 								value="${map.sumMoney}" pattern="#,###,###" /><br> 배송료 :
 							${map.fee}<br>
@@ -99,7 +105,7 @@ $(function(){
 					</tr>
 
 				</table>
-				<input class="btn btn-secondary" type="submit" id="orderInsert"
+				<input class="btn btn-secondary" type="submit" id="caor"
 					value="${row.prod_id}주문하기">
 				
 				<br>
